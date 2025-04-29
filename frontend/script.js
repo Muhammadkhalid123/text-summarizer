@@ -8,11 +8,11 @@ document.getElementById('summarizeBtn').addEventListener('click', function() {
     fetch('https://muhammadkhalid1.pythonanywhere.com/summarize', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'  // Set the header to indicate JSON data
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ text: text })  // Send the text as JSON
+        body: JSON.stringify({ text: text })  // Send text as JSON
     })
-    .then(response => response.json())
+    .then(response => response.json())  // Expect JSON response
     .then(data => {
         const outputDiv = document.getElementById('summaryOutput');
         const summaryText = document.getElementById('summaryText');
