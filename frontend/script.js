@@ -4,13 +4,13 @@ document.getElementById('summarizeBtn').addEventListener('click', function() {
         alert('Please enter text to summarize.');
         return;
     }
-    const formData = new FormData();
-    formData.append('text', text);
-    formData.append('summarize', 'summarize');
 
     fetch('https://muhammadkhalid1.pythonanywhere.com/summarize', {
         method: 'POST',
-        body: formData
+        headers: {
+            'Content-Type': 'application/json'  // Set the header to indicate JSON data
+        },
+        body: JSON.stringify({ text: text })  // Send the text as JSON
     })
     .then(response => response.json())
     .then(data => {
