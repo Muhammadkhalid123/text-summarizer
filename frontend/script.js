@@ -8,7 +8,7 @@ document.getElementById('summarizeBtn').addEventListener('click', function() {
     formData.append('text', text);
     formData.append('summarize', 'summarize');
 
-    fetch('/https://muhammadkhalid1.pythonanywhere.com', {
+    fetch('/https://muhammadkhalid1.pythonanywhere.com/summarize', {
         method: 'POST',
         body: formData
     })
